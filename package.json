@@ -1,0 +1,577 @@
+{
+	"name": "yasinfavorites",
+	"displayName": "Yasin Favorites",
+	"description": "Add files and folders directly to a favorites panel at root level - no mandatory categories",
+	"version": "1.0.0",
+	"publisher": "YasinArshad",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/yasinarshad/yasinfavorites"
+	},
+	"engines": {
+		"vscode": "^1.70.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"views": {
+			"explorer": [
+				{
+					"id": "yasinFavorites",
+					"name": "YASIN FAVORITES",
+					"visibility": "visible",
+					"contextualTitle": "Yasin Favorites",
+					"icon": "$(heart)"
+				}
+			]
+		},
+		"viewsWelcome": [
+			{
+				"view": "yasinFavorites",
+				"contents": "No favorites yet.\nRight-click any file or folder and select \"Add to Yasin Favorites\"."
+			}
+		],
+		"commands": [
+			{
+				"command": "yasinFavorites.addToFavorites",
+				"title": "Add to Yasin Favorites",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.remove",
+				"title": "Remove from Yasin Favorites",
+				"icon": "$(close)",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.refresh",
+				"title": "Refresh",
+				"icon": "$(refresh)",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.sort",
+				"title": "Sort Order",
+				"icon": "$(list-ordered)",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.newCategory",
+				"title": "New Favorites Folder",
+				"icon": "$(new-folder)",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.renameCategory",
+				"title": "Rename Folder",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.deleteCategory",
+				"title": "Delete Folder",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.moveToCategory",
+				"title": "Move to Folder",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.moveToRoot",
+				"title": "Move to Root",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.revealInSidebar",
+				"title": "Reveal in Side Bar",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.revealInFinder",
+				"title": "Reveal in Finder",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.copyPath",
+				"title": "Copy Path",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.copyRelativePath",
+				"title": "Copy Relative Path",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.cut",
+				"title": "Cut",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.copy",
+				"title": "Copy",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.paste",
+				"title": "Paste",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.rename",
+				"title": "Rename...",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.delete",
+				"title": "Move to Trash",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.newFile",
+				"title": "New File...",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.newFolder",
+				"title": "New Folder...",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.createTemplatedFolder",
+				"title": "Create New Templated Folder",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.fcApplyColor",
+				"title": "Set Color",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.fcApplyIcon",
+				"title": "Set Emoji Badge",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.fcReset",
+				"title": "Clear All",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.moveUp",
+				"title": "Move Up",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.moveDown",
+				"title": "Move Down",
+				"category": "Yasin Favorites"
+			},
+			{
+				"command": "yasinFavorites.addToFocusFolder",
+				"title": "Add to Focused Folders",
+				"category": "Yasin Favorites"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "yasinFavorites.copy",
+				"key": "cmd+c",
+				"mac": "cmd+c",
+				"win": "ctrl+c",
+				"linux": "ctrl+c",
+				"when": "focusedView == yasinFavorites"
+			},
+			{
+				"command": "yasinFavorites.cut",
+				"key": "cmd+x",
+				"mac": "cmd+x",
+				"win": "ctrl+x",
+				"linux": "ctrl+x",
+				"when": "focusedView == yasinFavorites"
+			},
+			{
+				"command": "yasinFavorites.paste",
+				"key": "cmd+v",
+				"mac": "cmd+v",
+				"win": "ctrl+v",
+				"linux": "ctrl+v",
+				"when": "focusedView == yasinFavorites"
+			},
+			{
+				"command": "yasinFavorites.copyPath",
+				"key": "alt+cmd+c",
+				"mac": "alt+cmd+c",
+				"win": "alt+ctrl+c",
+				"linux": "alt+ctrl+c",
+				"when": "focusedView == yasinFavorites"
+			},
+			{
+				"command": "yasinFavorites.rename",
+				"key": "enter",
+				"mac": "enter",
+				"win": "f2",
+				"linux": "f2",
+				"when": "focusedView == yasinFavorites"
+			},
+			{
+				"command": "yasinFavorites.delete",
+				"key": "cmd+backspace",
+				"mac": "cmd+backspace",
+				"win": "delete",
+				"linux": "delete",
+				"when": "focusedView == yasinFavorites"
+			},
+			{
+				"command": "yasinFavorites.revealInFinder",
+				"key": "cmd+shift+r",
+				"mac": "cmd+shift+r",
+				"win": "ctrl+shift+r",
+				"linux": "ctrl+shift+r",
+				"when": "focusedView == yasinFavorites"
+			},
+			{
+				"command": "yasinFavorites.moveUp",
+				"key": "alt+up",
+				"mac": "alt+up",
+				"win": "alt+up",
+				"linux": "alt+up",
+				"when": "focusedView == yasinFavorites"
+			},
+			{
+				"command": "yasinFavorites.moveDown",
+				"key": "alt+down",
+				"mac": "alt+down",
+				"win": "alt+down",
+				"linux": "alt+down",
+				"when": "focusedView == yasinFavorites"
+			}
+		],
+		"submenus": [
+			{
+				"id": "yasinFavorites.folderCustomization",
+				"label": "Folder Customization"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "yasinFavorites.refresh",
+					"when": "view == yasinFavorites",
+					"group": "navigation@1"
+				},
+				{
+					"command": "yasinFavorites.sort",
+					"when": "view == yasinFavorites",
+					"group": "navigation@2"
+				},
+				{
+					"command": "yasinFavorites.newCategory",
+					"when": "view == yasinFavorites",
+					"group": "navigation@3"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "yasinFavorites.addToFavorites",
+					"when": "explorerResourceIsFolder || explorerResourceIsFile",
+					"group": "favorites@1"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "yasinFavorites.moveUp",
+					"when": "view == yasinFavorites && viewItem =~ /^favorite/",
+					"group": "0_reorder@1"
+				},
+				{
+					"command": "yasinFavorites.moveDown",
+					"when": "view == yasinFavorites && viewItem =~ /^favorite/",
+					"group": "0_reorder@2"
+				},
+				{
+					"command": "yasinFavorites.revealInSidebar",
+					"when": "view == yasinFavorites && viewItem =~ /favorite|resource/",
+					"group": "1_navigation@1"
+				},
+				{
+					"command": "yasinFavorites.revealInFinder",
+					"when": "view == yasinFavorites && viewItem =~ /favorite|resource/",
+					"group": "1_navigation@2"
+				},
+				{
+					"command": "yasinFavorites.createTemplatedFolder",
+					"when": "view == yasinFavorites && viewItem =~ /\\.folder|resource\\.dir/",
+					"group": "1_navigation@3"
+				},
+				{
+					"command": "yasinFavorites.remove",
+					"when": "view == yasinFavorites && viewItem =~ /^favorite/",
+					"group": "2_favorite@1"
+				},
+				{
+					"command": "yasinFavorites.moveToCategory",
+					"when": "view == yasinFavorites && viewItem =~ /^favorite/",
+					"group": "2_favorite@2"
+				},
+				{
+					"command": "yasinFavorites.moveToRoot",
+					"when": "view == yasinFavorites && viewItem =~ /^favorite/ && viewItem =~ /\\.categorized/",
+					"group": "2_favorite@3"
+				},
+				{
+					"command": "yasinFavorites.newFile",
+					"when": "view == yasinFavorites && viewItem =~ /\\.folder|resource\\.dir/",
+					"group": "3_workspace@1"
+				},
+				{
+					"command": "yasinFavorites.newFolder",
+					"when": "view == yasinFavorites && viewItem =~ /\\.folder|resource\\.dir/",
+					"group": "3_workspace@2"
+				},
+				{
+					"command": "yasinFavorites.cut",
+					"when": "view == yasinFavorites && viewItem =~ /favorite|resource/",
+					"group": "5_cutcopypaste@1"
+				},
+				{
+					"command": "yasinFavorites.copy",
+					"when": "view == yasinFavorites && viewItem =~ /favorite|resource/",
+					"group": "5_cutcopypaste@2"
+				},
+				{
+					"command": "yasinFavorites.paste",
+					"when": "view == yasinFavorites && viewItem =~ /\\.folder|resource\\.dir|category/",
+					"group": "5_cutcopypaste@3"
+				},
+				{
+					"command": "yasinFavorites.copyPath",
+					"when": "view == yasinFavorites && viewItem =~ /favorite|resource/",
+					"group": "6_copypath@1"
+				},
+				{
+					"command": "yasinFavorites.copyRelativePath",
+					"when": "view == yasinFavorites && viewItem =~ /favorite|resource/",
+					"group": "6_copypath@2"
+				},
+				{
+					"command": "yasinFavorites.rename",
+					"when": "view == yasinFavorites && viewItem =~ /favorite|resource/",
+					"group": "7_modification@1"
+				},
+				{
+					"command": "yasinFavorites.delete",
+					"when": "view == yasinFavorites && viewItem =~ /favorite|resource/",
+					"group": "7_modification@2"
+				},
+				{
+					"submenu": "yasinFavorites.folderCustomization",
+					"when": "view == yasinFavorites && viewItem =~ /\\.folder|resource\\.dir/",
+					"group": "8_foldercustom@1"
+				},
+				{
+					"command": "yasinFavorites.addToFavorites",
+					"when": "view == yasinFavorites && viewItem =~ /resource/",
+					"group": "9_addfav@1"
+				},
+				{
+					"command": "yasinFavorites.addToFocusFolder",
+					"when": "view == yasinFavorites && viewItem =~ /favorite|resource/",
+					"group": "9_addfav@2"
+				},
+				{
+					"command": "yasinFavorites.renameCategory",
+					"when": "view == yasinFavorites && viewItem == 'category'",
+					"group": "10_category@1"
+				},
+				{
+					"command": "yasinFavorites.deleteCategory",
+					"when": "view == yasinFavorites && viewItem == 'category'",
+					"group": "10_category@2"
+				}
+			],
+			"yasinFavorites.folderCustomization": [
+				{
+					"command": "yasinFavorites.fcApplyColor",
+					"group": "1_fc@1"
+				},
+				{
+					"command": "yasinFavorites.fcApplyIcon",
+					"group": "1_fc@2"
+				},
+				{
+					"command": "yasinFavorites.fcReset",
+					"group": "2_fc@1"
+				}
+			],
+			"inline": [
+				{
+					"command": "yasinFavorites.remove",
+					"when": "view == yasinFavorites && viewItem =~ /^favorite/",
+					"group": "inline"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "yasinFavorites.addToFavorites",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.remove",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.revealInSidebar",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.revealInFinder",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.copyPath",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.copyRelativePath",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.cut",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.copy",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.paste",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.rename",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.delete",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.newFile",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.newFolder",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.newCategory",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.renameCategory",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.deleteCategory",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.moveToCategory",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.moveToRoot",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.sort",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.createTemplatedFolder",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.fcApplyColor",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.fcApplyIcon",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.fcReset",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.moveUp",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.moveDown",
+					"when": "false"
+				},
+				{
+					"command": "yasinFavorites.addToFocusFolder",
+					"when": "false"
+				}
+			]
+		},
+		"configuration": {
+			"title": "Yasin Favorites",
+			"properties": {
+				"yasinFavorites.items": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"path": {
+								"type": "string"
+							},
+							"type": {
+								"type": "string",
+								"enum": [
+									"file",
+									"folder"
+								]
+							},
+							"category": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"path",
+							"type"
+						]
+					},
+					"default": [],
+					"description": "List of favorited paths"
+				},
+				"yasinFavorites.categories": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [],
+					"description": "List of favorites folder names (includes empty folders)"
+				},
+				"yasinFavorites.sortOrder": {
+					"type": "string",
+					"enum": [
+						"ASC",
+						"DESC",
+						"MODIFIED",
+						"MANUAL"
+					],
+					"default": "MANUAL",
+					"description": "Sort order for favorites: ASC (A-Z), DESC (Z-A), MODIFIED (newest first), or MANUAL (drag order)"
+				}
+			}
+		}
+	}
+}
