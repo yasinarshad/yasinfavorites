@@ -285,7 +285,7 @@ function activate(context) {
             const message = paths.length === 1
                 ? 'Path copied'
                 : `${paths.length} paths copied`;
-            vscode.window.showInformationMessage(message);
+            vscode.window.setStatusBarMessage(`✅ ${message}`, 2000);
         }),
 
         vscode.commands.registerCommand('yasinFavorites.copyRelativePath', (resource, selectedItems) => {
@@ -317,7 +317,7 @@ function activate(context) {
             const message = paths.length === 1
                 ? 'Relative path copied'
                 : `${paths.length} relative paths copied`;
-            vscode.window.showInformationMessage(message);
+            vscode.window.setStatusBarMessage(`✅ ${message}`, 2000);
         }),
 
         // File operations

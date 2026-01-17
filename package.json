@@ -2,7 +2,7 @@
 	"name": "yasinfavorites",
 	"displayName": "Yasin Favorites",
 	"description": "Add files and folders directly to a favorites panel at root level - no mandatory categories",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "YasinArshad",
 	"repository": {
 		"type": "git",
@@ -213,6 +213,14 @@
 				"mac": "alt+cmd+c",
 				"win": "alt+ctrl+c",
 				"linux": "alt+ctrl+c",
+				"when": "focusedView == yasinFavorites"
+			},
+			{
+				"command": "yasinFavorites.copyPath",
+				"key": "shift+cmd+c",
+				"mac": "shift+cmd+c",
+				"win": "shift+ctrl+c",
+				"linux": "shift+ctrl+c",
 				"when": "focusedView == yasinFavorites"
 			},
 			{
