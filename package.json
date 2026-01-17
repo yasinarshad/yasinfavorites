@@ -8,6 +8,11 @@
 		"type": "git",
 		"url": "https://github.com/yasinarshad/yasinfavorites"
 	},
+	"icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#FF6B6B",
+		"theme": "dark"
+	},
 	"engines": {
 		"vscode": "^1.70.0"
 	},
