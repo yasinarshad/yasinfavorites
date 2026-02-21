@@ -2,6 +2,15 @@
 
 All notable changes to the "Yasin Favorites" extension will be documented in this file.
 
+## [1.0.2] - 2026-01-24
+
+### Changed
+- Folders now appear **at the bottom** of sorted lists (all sort modes)
+- Files are sorted first, then folders below them
+- Improves visibility of recently modified files in "Latest Modified" sort
+
+> **Dev note:** Changed `_getFilesystemChildren()` in YasinFavoritesProvider.js:345-346. Flipped directory comparison from `return -1/1` to `return 1/-1` so directories sort after files instead of before.
+
 ## [1.0.1] - 2026-01-17
 
 ### Fixed

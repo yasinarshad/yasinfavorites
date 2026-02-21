@@ -342,9 +342,9 @@ class YasinFavoritesProvider {
                 const statA = itemStats.get(a);
                 const statB = itemStats.get(b);
 
-                // Directories always first (regardless of sort order)
-                if (statA.isDir && !statB.isDir) return -1;
-                if (!statA.isDir && statB.isDir) return 1;
+                // Directories AFTER files (at bottom)
+                if (statA.isDir && !statB.isDir) return 1;
+                if (!statA.isDir && statB.isDir) return -1;
 
                 // Then apply sortOrder
                 if (this.sortOrder === 'MODIFIED') {
